@@ -1,0 +1,11 @@
+{
+	"/template-backend/": {
+		"target": "http://localhost:8090/template-backend/",
+		"secure": false,
+		"changeOrigin":true,
+		"logLevel": "debug",
+		"pathRewrite": {
+			"^/template-backend/": ""
+		}
+	}
+}

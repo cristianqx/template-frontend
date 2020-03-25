@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "yaml2json -p -s -r src/app/shared/services/template-frontend/apidescriptor/ApiApplication-V1.yaml && ng-swagger-gen -c src/app/shared/services/template-frontend/apidescriptor/ng-swagger-gen.json && ng serve --proxy-config proxy.conf.json",
+    "build": "yaml2json -p -s -r src/app/shared/services/template-frontend/apidescriptor/ApiApplication-V1.yaml && ng-swagger-gen -c src/app/shared/services/template-frontend/apidescriptor/ng-swagger-gen.json && ng build --prod --source-map",
+    "test": "ng test --code-coverage --watch=false",
+    "lint": "yaml2json -p -s -r src/app/shared/services/template-frontend/apidescriptor/ApiApplication-V1.yaml && ng-swagger-gen -c src/app/shared/services/template-frontend/apidescriptor/ng-swagger-gen.json && ng lint",
+    "e2e": "yaml2json -p -s -r src/app/shared/services/template-frontend/apidescriptor/ApiApplication-V1.yaml && ng-swagger-gen -c src/app/shared/services/template-frontend/apidescriptor/ng-swagger-gen.json && ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +21,8 @@
     "@angular/router": "~8.2.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "ng-swagger-gen": "~1.5.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.2",
@@ -42,6 +43,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "yamljs": "^0.3.0"
   }
 }
